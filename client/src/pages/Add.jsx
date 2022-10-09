@@ -7,7 +7,7 @@ const Add = () => {
   const [book, setBook] = useState({
     title: "",
     desc: "",
-    price: null,
+    price: 0,
     cover: "",
   });
   const [error,setError] = useState(false)
@@ -49,6 +49,7 @@ const Add = () => {
         type="number"
         placeholder="Book price"
         name="price"
+        value="0"
         onChange={handleChange}
       />
       <input

@@ -1,5 +1,5 @@
 .app {
-  height: 100vh;
+  background-color: #ffb6c163;
   padding: 0 100px;
   display: flex;
   align-items: center;
@@ -8,20 +8,22 @@
 
   .addHome {
     padding: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     cursor: pointer;
     border: none;
-    background-color: teal;
+    background-color: rgb(255 122 122);
     color: white;
     font-weight: bold;
   }
 
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   .books {
     display: flex;
+    gap: 30px;
 
     .book {
       flex: 1;
@@ -29,6 +31,7 @@
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      border: ridge;
 
       img {
         width: 200px;

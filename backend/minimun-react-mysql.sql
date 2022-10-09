@@ -31,7 +31,7 @@ CREATE TABLE `books` (
   `id` int(11) NOT NULL,
   `title` varchar(45) NOT NULL,
   `desc` varchar(1000) NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` int(11) NOT NULL DEFAULT 0,
   `cover` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
