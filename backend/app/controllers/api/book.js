@@ -1,13 +1,11 @@
 import express from "express";
-
-export const bookApi = express.Router();
 import { Book } from "../../models/book.js"
 
+export const bookApi = express.Router();
+
 bookApi.get("/books", async (req, res) => {
     try {
         const resData = await Book.findAll();
-        // console.log({ resData })
-
         let arrangedResData = [];
         resData.forEach(row => {
             arrangedResData.push(
@@ -22,34 +20,9 @@ bookApi.get("/books", async (req, res) => {
         });
         // console.log({ arrangedResData })
 
-        return res.json(arrangedResData);
+        return res.json({ success: true, data: arrangedResData });
     } catch (err) {
-        console.error(err.message);
-    }
-});
-
-bookApi.get("/books", async (req, res) => {
-    try {
-        const resData = await Book.findAll();
-        // console.log({ resData })
-
-        let arrangedResData = [];
-        resData.forEach(row => {
-            arrangedResData.push(
-                {
-                    "id": row.id,
-                    "title": row.title,
-                    "desc": row.desc,
-                    "price": row.price,
-                    "cover": row.cover ? row.cover : "https://www.publicdomainpictures.net/pictures/300000/nahled/empty-white-room.jpg"
-                }
-            );
-        });
-        // console.log({ arrangedResData })
-
-        return res.json(arrangedResData);
-    } catch (err) {
-        console.error(err.message);
+        return res.json({ success: false, message: err.message });
     }
 });
 

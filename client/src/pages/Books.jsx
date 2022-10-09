@@ -11,15 +11,15 @@ const Books = () => {
     const fetchAllBooks = async () => {
       try {
         const res = await axios.get("http://localhost:8800/api/v1/books");
-        setBooks(res.data);
+        const resData = res.data
+        // console.log({resData});
+        setBooks(resData.data);
       } catch (err) {
         console.log(err);
       }
     };
     fetchAllBooks();
   }, []);
-
-  console.log(books);
 
   const handleDelete = async (id) => {
     try {

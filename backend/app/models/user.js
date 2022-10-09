@@ -1,22 +1,18 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../db/index.js";
 
-export const Book = sequelize.define('Book', {
-    title: {
+export const User = sequelize.define('User', {
+    name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
-    desc: {
+    email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
     },
-    price: {
-        type: DataTypes.NUMBER,
-        allowNull: false
-    },
-    cover: {
+    password: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false,
     },
 }, {
     freezeTableName: true,
